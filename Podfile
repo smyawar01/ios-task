@@ -8,6 +8,10 @@ target 'CampaignBrowser' do
     pod 'MapleBacon', '= 4.0.1'
 end
 
+target 'CampaignBrowserSnapShotTests' do
+  pod 'SnapshotTesting', '~> 1.9.0'
+end
+
 post_install do |installer|
     installer.pods_project.targets.each do |target|
         if ['MapleBacon'].include? target.name
