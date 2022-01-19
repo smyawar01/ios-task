@@ -12,7 +12,7 @@ import SnapshotTesting
 
 class CompaignListingViewControllerTests: XCTestCase {
     
-    var viewController: UIViewController!
+    var viewController: CampaignListingViewController!
 
     override func setUpWithError() throws {
       try super.setUpWithError()
@@ -26,7 +26,21 @@ class CompaignListingViewControllerTests: XCTestCase {
 
     func testCompaignListingControllerWithLoadingState() throws {
         
-        assertSnapshot(matching: viewController, as: .waiting(for: 5, on: .image))
+        assertSnapshot(matching: viewController, as: .image)
+    }
+    func testCompaignListingControllerWithLoadedState() throws {
+        
+        _ = viewController.view
+        let campaigns = [CampaignListingView.Campaign.fixture(for: CompaignListingViewControllerTests.self)]
+        viewController.typedView.display(campaigns: campaigns)
+        let expection = XCTestExpectation(description: "wait")
+        let duration = 5.0
+        DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
+            
+            expection.fulfill()
+        }
+        _ = XCTWaiter.wait(for: [expection], timeout: duration + 1)
+        assertSnapshot(matching: viewController, as: .image)
     }
     func testCompaignListingControllerWithDarkMode() throws {
         

@@ -21,9 +21,11 @@
 		23F7B5DE1F59A71B00154DD9 /* CampaignData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F7B5DD1F59A71B00154DD9 /* CampaignData.swift */; };
 		23F7B5E01F59A73000154DD9 /* CampaignListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F7B5DF1F59A73000154DD9 /* CampaignListingView.swift */; };
 		B8B5F1F166845F0ECFBB5E7F /* Pods_CampaignBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE6F773D7D1702E9482B13D /* Pods_CampaignBrowser.framework */; };
+		D3867517279804AF00B416EA /* CampaignData+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3867515279804AF00B416EA /* CampaignData+Fixture.swift */; };
+		D386751B279825AF00B416EA /* StubImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3867519279825AF00B416EA /* StubImageService.swift */; };
+		D386751E279828B300B416EA /* TestImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D386751C279828B200B416EA /* TestImages.xcassets */; };
 		D397199227919BA300A455D3 /* LabelWithPaddingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D397199127919BA300A455D3 /* LabelWithPaddingTests.swift */; };
 		D39719992791C3DF00A455D3 /* CompaignListingViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39719982791C3DF00A455D3 /* CompaignListingViewControllerTests.swift */; };
-		D397199B2791CD6600A455D3 /* SnapShot+Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = D397199A2791CD6600A455D3 /* SnapShot+Async.swift */; };
 		D397199D2792295600A455D3 /* CampaignCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D397199C2792295600A455D3 /* CampaignCellTests.swift */; };
 		F4E1DD6BAA5FF1BA2C80BB90 /* Pods_CampaignBrowserSnapShotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01AF07007B79F38C017A246 /* Pods_CampaignBrowserSnapShotTests.framework */; };
 /* End PBXBuildFile section */
@@ -70,10 +72,12 @@
 		4CE7CF5EE612E0B6A02B0F28 /* Pods-CampaignBrowserSnapShotTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampaignBrowserSnapShotTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CampaignBrowserSnapShotTests/Pods-CampaignBrowserSnapShotTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6EE6F773D7D1702E9482B13D /* Pods_CampaignBrowser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CampaignBrowser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B01AF07007B79F38C017A246 /* Pods_CampaignBrowserSnapShotTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CampaignBrowserSnapShotTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3867515279804AF00B416EA /* CampaignData+Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CampaignData+Fixture.swift"; sourceTree = "<group>"; };
+		D3867519279825AF00B416EA /* StubImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubImageService.swift; sourceTree = "<group>"; };
+		D386751C279828B200B416EA /* TestImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TestImages.xcassets; sourceTree = "<group>"; };
 		D397198F27919BA300A455D3 /* CampaignBrowserSnapShotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CampaignBrowserSnapShotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D397199127919BA300A455D3 /* LabelWithPaddingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelWithPaddingTests.swift; sourceTree = "<group>"; };
 		D39719982791C3DF00A455D3 /* CompaignListingViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaignListingViewControllerTests.swift; sourceTree = "<group>"; };
-		D397199A2791CD6600A455D3 /* SnapShot+Async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SnapShot+Async.swift"; sourceTree = "<group>"; };
 		D397199C2792295600A455D3 /* CampaignCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignCellTests.swift; sourceTree = "<group>"; };
 		EFF862F2521D154547AA0BBB /* Pods-CampaignBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampaignBrowser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CampaignBrowser/Pods-CampaignBrowser.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -226,13 +230,31 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D38675142798044700B416EA /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				D3867515279804AF00B416EA /* CampaignData+Fixture.swift */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
+		D38675182798258D00B416EA /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				D3867519279825AF00B416EA /* StubImageService.swift */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
 		D397199027919BA300A455D3 /* CampaignBrowserSnapShotTests */ = {
 			isa = PBXGroup;
 			children = (
+				D38675182798258D00B416EA /* Stubs */,
+				D38675142798044700B416EA /* Fixtures */,
 				D397199127919BA300A455D3 /* LabelWithPaddingTests.swift */,
 				D39719982791C3DF00A455D3 /* CompaignListingViewControllerTests.swift */,
-				D397199A2791CD6600A455D3 /* SnapShot+Async.swift */,
 				D397199C2792295600A455D3 /* CampaignCellTests.swift */,
+				D386751C279828B200B416EA /* TestImages.xcassets */,
 			);
 			path = CampaignBrowserSnapShotTests;
 			sourceTree = "<group>";
@@ -369,6 +391,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D386751E279828B300B416EA /* TestImages.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,10 +447,16 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CampaignBrowserSnapShotTests/Pods-CampaignBrowserSnapShotTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapshotTesting/SnapshotTesting.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapshotTesting.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,8 +517,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3867517279804AF00B416EA /* CampaignData+Fixture.swift in Sources */,
 				D397199227919BA300A455D3 /* LabelWithPaddingTests.swift in Sources */,
-				D397199B2791CD6600A455D3 /* SnapShot+Async.swift in Sources */,
+				D386751B279825AF00B416EA /* StubImageService.swift in Sources */,
 				D39719992791C3DF00A455D3 /* CompaignListingViewControllerTests.swift in Sources */,
 				D397199D2792295600A455D3 /* CampaignCellTests.swift in Sources */,
 			);
