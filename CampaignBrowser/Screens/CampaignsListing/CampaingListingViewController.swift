@@ -19,6 +19,14 @@ class CampaignListingViewController: UIViewController {
         super.viewDidLoad()
 
         assert(typedView != nil)
+        
+        //** Add estimatedItemSize programmatically just to avoid constraint error in storyboard. Although working perfectly on runtime without breaking any constraint. */
+        guard let flowLayout = typedView.collectionViewLayout as? UICollectionViewFlowLayout else {
+            
+            //** Put assertion to make sure flowlayout is available. */
+            assert(false, "Fatal Error. TypedView doest not containt UICollectionViewFlowLayout.")
+        }
+        flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
     }
 
     override func viewWillAppear(_ animated: Bool) {

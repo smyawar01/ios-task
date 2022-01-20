@@ -6,7 +6,12 @@ import UIKit
 /**
  Responsible for downloading images.
  */
-public class ImageService {
+
+protocol ImageProvider {
+    
+    func getImage(url: URL) -> Observable<UIImage>
+}
+public class ImageService: ImageProvider {
 
     /** The `MapleBacon` image manager instance which we're using for image fetching and caching. */
     private let imageManager = ImageManager.sharedManager

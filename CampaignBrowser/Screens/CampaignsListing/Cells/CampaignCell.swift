@@ -9,6 +9,8 @@ class CampaignCell: UICollectionViewCell {
 
     private let disposeBag = DisposeBag()
 
+    @IBOutlet weak var containerView: UIStackView!
+    @IBOutlet weak var maxWidthConstraint: NSLayoutConstraint!
     /** Used to display the campaign's title. */
     @IBOutlet private(set) weak var nameLabel: UILabel!
 
@@ -49,5 +51,16 @@ class CampaignCell: UICollectionViewCell {
         assert(nameLabel != nil)
         assert(descriptionLabel != nil)
         assert(imageView != nil)
+        
+        //** Prevent Xcode from generating auto layout constraint for width and height for self sizing cell. */
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        //** Set main container width constraint to max screen width. */
+        let screenWidth = UIScreen.main.bounds.size.width
+        maxWidthConstraint.constant = screenWidth
+        
+        //Add custom spacing between title and description. */
+        containerView.setCustomSpacing(8, after: nameLabel)
+        
     }
 }
